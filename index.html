@@ -1,42 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Capstone Project</title>
-</head>
-<body>
-    <h1>Capstone Project RevoU Software Engineering</h1>
-    <nav>
-        <ul class="navbar">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Project</a></li>
-        </ul>
-    </nav>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Capstone Project</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- navbar -->
+        <nav>
+            <div class="logo">
+                <h1>Bike Sales Company (BSC)</h1>
+            </div>
+            <ul id="menuList">
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Our Project</a></li>
+                <li><a href="#contact">Our Contact</a></li>
+            </ul>
+            <div class="menu-icon">
+                <i class="fa-solid fa-bars" onclick="toggleMenu()"></i>
+            </div>
+        </nav>
+        <!-- navbar -->
 
-    <section id="about" class="about">
-        <h1>About Us</h1>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Ut voluptatem itaque laboriosam. Soluta, aut! Aut dolorum dignissimos, 
-            accusantium dolor quidem velit temporibus facilis, earum, voluptatibus 
-            explicabo magnam possimus a debitis!
-        </p>
-    </section>
+        <!-- jumbotron -->
+        <div class="jumbotron">
+            <div class="jumbotron-content">
+                <h1>Welcome to Our Capstone Project</h1>
+                <p>Learn more about our project and team.</p>
+                <a href="#about" class="btn">Explore More</a>
+            </div>
+        </div>
+        <!-- jumbotron -->
 
-    <section id="project" class="project">
-        <h1>Our Project</h1>
-        <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-            Ut voluptatem itaque laboriosam. Soluta, aut! Aut dolorum dignissimos, 
-            accusantium dolor quidem velit temporibus facilis, earum, voluptatibus 
-            explicabo magnam possimus a debitis!
-        </p>
-    </section>
+        <!-- about -->
+        
+        <!-- about -->
 
-    <footer>
-        <p>&copy; Copyright <strong><span>Tim 5 Palembang</span></strong>. All Rights Reserved</p>
-    </footer>
-</body>
+        <script src="dist/main.js"></script>
+        <script src="https://kit.fontawesome.com/f8e1a90484.js" crossorigin="anonymous"></script>
+    </body>
 </html>
