@@ -1,8 +1,8 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 html,body{
@@ -12,50 +12,64 @@ html,body{
 }
 
 /* navbar */
-nav{
+nav {
     padding: 10px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #004274;
-    position: relative;
+    background: #006ec3;
+    position: fixed; /* Tambahkan properti position: fixed */
+    top: 0; /* Letakkan navbar di bagian atas */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Atur z-index agar navbar tampil di atas konten */
     height: 70px;
+    width: 100%; /* Lebar penuh */
 }
 
-.logo{
+/* Untuk memberi ruang agar konten tidak tertutup oleh navbar */
+body {
+    padding-top: 70px; /* Atur padding atas sebesar tinggi navbar */
+}
+
+.logo {
     color: #fff;
 }
 
-nav ul{
+nav ul {
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-nav ul li{
+nav ul li {
     list-style-type: none;
 }
 
-nav ul li a{
+nav ul li a {
     text-decoration: none;
     color: #fff;
 }
 
-nav ul li a:hover{
-    color: #81c1f3;
+nav ul li a:hover {
+    color: #001e36;
 }
 
-.menu-icon{
+.menu-icon {
     display: none;
 }
 
-.menu-icon i{
+.menu-icon i {
     color: #fff;
     font-size: 30px;
 }
 
-@media (max-width:600px) {
-    nav ul{
+@media (max-width: 600px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    nav ul {
         position: absolute;
         top: 70px;
         left: 0;
@@ -65,15 +79,25 @@ nav ul li a:hover{
         background: #004274;
         gap: 0;
         overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.5s ease; /* Transisi untuk animasi dropdown menu */
     }
-    nav ul li{
+
+    nav ul.open {
+        max-height: 300px; /* Tampilkan menu dropdown saat class "open" aktif */
+    }
+
+    nav ul li {
         padding: 20px;
         padding-top: 0;
+        margin-top: 15px;
     }
-    .menu-icon{
+
+    .menu-icon {
         display: block;
     }
-    #menuList{
+
+    #menuList {
         transition: all 0.5s;
     }
 }
@@ -109,7 +133,7 @@ nav ul li a:hover{
 .jumbotron .btn {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #004274;
+    background-color: #025594;
     color: #fff;
     text-decoration: none;
     border-radius: 5px;
@@ -127,3 +151,119 @@ nav ul li a:hover{
     }
 }
 /* jumbotron */
+
+/* about */
+.container {
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+
+.image {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.image img {
+    max-width: 100%; /* Menggunakan max-width agar gambar tidak melebihi lebar parent container */
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+.text {
+    flex: 2;
+}
+
+.text h1 {
+    font-size: 24px;
+    color: #333;
+}
+
+.text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #666;
+    text-align: justify;
+}
+/* Media Queries untuk Responsif */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+    }
+
+    .image {
+        width: 40%;
+        max-width: none; /* Hapus batasan lebar maksimum untuk tampilan desktop */
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    .text {
+        width: 60%;
+        max-width: none; /* Hapus batasan lebar maksimum untuk tampilan desktop */
+    }
+}
+/* about */
+
+/* team */
+.team-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.team-header {
+    text-align: center;
+    margin-bottom: 30px; /* Jarak antara judul dan daftar tim */
+    margin-top: 50px;
+}
+
+.team-header h1{
+    font-size: 24px;
+    color: #333;
+}
+
+.team-card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan box shadow */
+    transition: box-shadow 0.3s ease; /* Efek transisi pada box shadow saat hover */
+}
+
+.team-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.team-card p {
+    color: #666;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+/* team */
+
+/* project */
+
+/* project */
+
+/* contact */
+
+/* contact */
+
+/* footer */
+
+/* footer */
