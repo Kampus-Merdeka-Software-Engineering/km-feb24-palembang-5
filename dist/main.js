@@ -1,15 +1,15 @@
-let menuList = document.getElementById("menuList")
-menuList.style.maxHeight = "0px";
+// let menuList = document.getElementById("menuList")
+// menuList.style.maxHeight = "0px";
 
-function toggleMenu(){
-    if(menuList.style.maxHeight == "0px")
-    {
-        menuList.style.maxHeight = "300px";
-    }
-    else{
-        menuList.style.maxHeight = "0px";
-    }
-}
+// function toggleMenu(){
+//     if(menuList.style.maxHeight == "0px")
+//     {
+//         menuList.style.maxHeight = "300px";
+//     }
+//     else{
+//         menuList.style.maxHeight = "0px";
+//     }
+// }
 
 // Select all <a> elements inside the navbar
 const navLinks = document.querySelectorAll('nav a');
@@ -28,3 +28,12 @@ navLinks.forEach(link => {
         }
     });
 });
+
+// menu toggle
+const menu = document.getElementById('menu-label');
+const sidebar = document.getElementsByClassName('sidebar')[0];
+
+menu.addEventListener('click', function(){
+    sidebar.classList.toggle('hide');
+    console.log('ok');
+})
