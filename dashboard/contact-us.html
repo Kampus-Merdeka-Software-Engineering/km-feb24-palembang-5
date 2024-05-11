@@ -10,9 +10,29 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
+    <!-- navbar -->
+    <div class="navbar">
+        <form class="search-form">
+            <input type="text" placeholder="Search...">
+            <button type="submit">Search</button>
+        </form>
+        <div class="profile">
+            <img src="../assets/img/user.jpg" alt="Profile Picture">
+            <span class="profile-name">User</span>
+        </div>
+    </div>    
+    <!-- navbar -->
+    
     <div class="container">
         <!-- side navbar -->
         <div class="sidebar">
+            <div id="menu-button">
+                <input type="checkbox" id="menu-checkbox">
+                <label for="menu-checkbox" id="menu-label">
+                    <div id="hamburger"></div>
+                </label>
+            </div>
+            <br><br>
             <div class="header">
                 <div class="list-item">
                     <a href="#">
@@ -24,9 +44,9 @@
                 <hr>
                 <div class="main">
                     <div class="list-item">
-                        <i class='bx bxs-home icon'></i>
+                        <i class='bx bxs-dashboard icon'></i>
                         <a href="dashboard.html">
-                            <span class="desc">Home</span>
+                            <span class="desc">Dashboard</span>
                         </a>
                     </div>
 
@@ -38,16 +58,10 @@
                     </div>
 
                     <div class="list-item">
-                        <i class='bx bx-objects-vertical-bottom icon'></i>
+                        <i class='bx bxs-edit icon'></i>
+                        <!-- <i class='bx bx-objects-vertical-bottom icon'></i> -->
                         <a href="about-us.html">
                             <span class="desc">About</span>
-                        </a>
-                    </div>
-
-                    <div class="list-item">
-                        <i class='bx bxs-dashboard icon'></i>
-                        <a href="project.html">
-                            <span class="desc">Dashboard</span>
                         </a>
                     </div>
 
@@ -57,6 +71,13 @@
                             <span class="desc">Contact Us</span>
                         </a>
                     </div>
+
+                    <div class="list-item">
+                        <i class='bx bxs-exit icon'></i>
+                        <a href="../index.html">
+                            <span class="desc">Kembali</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -64,13 +85,6 @@
 
         <!-- main content -->
         <div class="main-content">
-            <div id="menu-button">
-                <input type="checkbox" id="menu-checkbox">
-                <label for="menu-checkbox" id="menu-label">
-                    <div id="hamburger"></div>
-                </label>
-            </div><br>
-
             <div class="content">
                 <p>Pages / Contact Us</p>
                 <h2>Contact Us</h2>

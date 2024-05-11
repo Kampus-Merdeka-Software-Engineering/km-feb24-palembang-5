@@ -4,24 +4,78 @@
     font-family: 'Comic Sans MS';
 }
 
+/* navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 28px;
+    background-color: #EAEEF3;
+}
+
+.search-form {
+    display: flex;
+    align-items: center;
+}
+
+.search-form{
+    margin-left: auto;
+    margin-right: 20px;
+}
+
+.search-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-form button {
+    margin-left: 8px;
+    padding: 8px 16px;
+    background-color: #1a8cff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.profile-name {
+    font-weight: bold;
+}
+/* navbar */
+
 /* sidebar */
 .container{
     display: flex;
     min-height: 100vh;
 }
 
-.sidebar{
+.sidebar {
     background-color: #EAEEF3;
     width: 290px;
+    min-width: 290px; /* Tambahkan lebar minimum */
     padding: 24px;
     display: flex;
     box-sizing: border-box;
     flex-direction: column;
-    transition: all ease-in .5s;
+    transition: ease-in-out .5s; /* Hanya transisi lebar */
 }
 
 .sidebar.hide{
     width: 87px;
+    min-width: 87px;
     transition: all ease-out .5s;
 }
 
@@ -70,9 +124,10 @@
 .sidebar .header .main .list-item 
 .bx.bxs-dashboard.icon,
 .bx.bxs-user.icon,
-.bx.bx-objects-vertical-bottom.icon,
-.bx.bxs-contact.icon{
-    font-size: 22px; /* Ubah ukuran ikon sesuai kebutuhan */
+.bx.bxs-edit.icon,
+.bx.bxs-contact.icon,
+.bx.bxs-exit.icon{
+    font-size: 24px; /* Ubah ukuran ikon sesuai kebutuhan */
 }
 
 
@@ -112,6 +167,7 @@
     /* background-color: #9BBEC8; */
     position: absolute;
     overflow: hidden;
+    /* margin-left: 210px; */
 }
 
 #menu-label{
