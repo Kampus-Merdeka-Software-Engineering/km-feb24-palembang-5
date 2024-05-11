@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="style-dashboard.css">
     <!-- font icon box -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- ApexCharts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
 </head>
 <body>
     <!-- navbar -->
@@ -89,7 +91,59 @@
                 <p>Pages / Dashboard</p>
                 <h2>Dashboard Bike Sales In Europe</h2>
 
-                
+                <!-- box -->
+                <div class="content-box">
+                    <div class="isi-box">
+                        <i class='bx bxs-bar-chart-alt-2'></i>
+                        <div>
+                            <h3>Total Profit</h3>
+                            <p>$350.4</p>
+                        </div>
+                    </div>
+
+                    <div class="isi-box">
+                        <i class='bx bx-dollar'></i>
+                        <div>
+                            <h3>Total Cost</h3>
+                            <p>$642.39</p>
+                        </div>
+                    </div>
+
+                    <div class="isi-box">
+                        <i class='bx bx-line-chart'></i>
+                        <div>
+                            <h3>Total Revenue</h3>
+                            <p>$574.34</p>
+                        </div>
+                    </div>
+
+                    <div class="isi-box">
+                        <i class='bx bxs-copy-alt'></i>
+                        <div>
+                            <h3>Total Products</h3>
+                            <p>2935</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- box -->
+
+                <!-- chart -->
+                <div class="charts">
+                    <div class="charts-card">
+                        <div class="chart-title">
+                            <h3>Sales By Age And Category</h3>
+                        </div>
+                        <div id="bar-chart"></div>
+                    </div>
+
+                    <div class="charts-card">
+                        <div class="chart-title">
+                            <h3>Quantity Sold By Category</h3>
+                        </div>
+                        <div id="bar-chart-qty"></div>
+                    </div>
+                </div>
+                <!-- chart -->
             </div>
         </div>
         <!-- main content -->
