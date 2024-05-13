@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1px 28px;
-    background-color: #EAEEF3;
+    background-color: #b3e0ff;
 }
 
 .search-form {
@@ -403,6 +403,7 @@
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 50px;
+    margin-bottom: 25px;
 }
 
 .team-card {
@@ -440,6 +441,7 @@
     max-width: 850px;
     margin: 0 auto;
     padding: 20px;
+    margin-bottom: 25px;
 }
   
 .form-contact-container form {
@@ -472,7 +474,7 @@ select {
 }
   
 .form-contact-container .button {
-    background-color: #4952f5;
+    background-color: #1aa3ff;
     color: white;
     padding: 14px 20px;
     margin: 10px 0;
@@ -483,6 +485,17 @@ select {
 }
   
 .form-contact-container .button:hover {
-    background-color: #291ab4;
+    background-color: #4db8ff;
 }
 /* contact-us */
+
+/* footer */
+.footer{
+    padding: 12px 10px;
+    background-color: #b3e0ff;
+}
+
+.footer p{
+    text-align: center;
+}
+/* footer */
