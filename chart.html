@@ -7,26 +7,38 @@
 </head>
 <body>
     <div style="width: 900px;">
-        <canvas id="myChart"></canvas>
+        <canvas id="orderQty"></canvas>
+    </div>
+
+    <div style="width: 900px;">
+        <canvas id="AOV"></canvas>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-        const getMyChart = document.getElementById("myChart");
+        const getOrderQty = document.getElementById("orderQty");
 
-        new Chart(getMyChart, {
-            type: "bar",
-            data: {
-                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-                datasets: [
-                    {
-                        label: '# of Votes',
-                        data: [12, 19, 3, 5, 2, 3],
-                        borderWidth: 1,
-                    },
-                ],
-            },
-        });
+        const getOrderQuantity = async () => {
+            const response = await fetch("data/dataset.json");
+            const dataJson = await response.json();
+            console.log(dataJson);
+
+            new Chart(getOrderQty, {
+                type: "bar",
+                data: {
+                    labels: dataJson.data.map((bikes) => bikes.Month),
+                    datasets: [
+                        {
+                            label: 'Order Quantity',
+                            data: dataJson.data.map((bikes) => bikes.Order_Quantity),
+                            borderWidth: 1,
+                        },
+                    ],
+                },
+            });
+        };
+
+        getOrderQuantity();
     </script>
 </body>
 </html>
