@@ -333,29 +333,42 @@
 }
 
 /* carts */
-.charts{
+.charts {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    margin-top: 60px;
-}
-
-.charts-card{
-    background-color: #D0E3FF;
+    margin-top: 40px;
     margin-bottom: 20px;
-    padding: 25px;
-    -webkit-column-break-inside: avoid;
-    border-radius: 5px;
-    box-shadow: 0 6px 7px -4px rgba(0, 0, 0, 0.2);
 }
 
-.chart-title{
+.charts .chart-container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
 }
 /* carts */
+
+/* table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #fff;
+    margin-bottom: 20px;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+/* table */
 /* content */
 
 /* about-us */
