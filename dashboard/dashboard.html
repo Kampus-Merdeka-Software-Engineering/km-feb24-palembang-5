@@ -8,8 +8,6 @@
     <link rel="stylesheet" href="style-dashboard.css">
     <!-- font icon box -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <!-- ApexCharts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/apexcharts/3.35.5/apexcharts.min.js"></script>
 </head>
 <body>
     <!-- navbar -->
@@ -128,12 +126,48 @@
                 <!-- box -->
 
                 <!-- chart -->
-                <center>
-                    <div style="width: 90%; margin-top: 50px; background-color: #fff;">
+                <div class="charts">
+                    <!-- bar chart Order Quantity -->
+                    <div class="chart-container">
                         <canvas id="orderQty"></canvas>
                     </div>
-                </center>
+                
+                    <!-- bar chart Average Of Value -->
+                    <div class="chart-container">
+                        <canvas id="AOV"></canvas>
+                    </div>
+                
+                    <!-- bar chart Quantity Sold by Category 2016 -->
+                    <div class="chart-container">
+                        <canvas id="qtySoldCategory"></canvas>
+                    </div>
+                
+                    <!-- bar chart Quantity Sold by Location -->
+                    <div class="chart-container">
+                        <canvas id="qtySoldLocation"></canvas>
+                    </div>
+
+                    <!-- bar chart Sold By Age And Category -->
+                    <div class="chart-container">
+                        <canvas id="SoldByAgeNCtg"></canvas>
+                    </div>
+                </div>                
                 <!-- chart -->
+
+                <!-- tabel total pendapatan -->
+                <table id="product-table">
+                    <thead>
+                      <tr>
+                        <th>Product Category</th>
+                        <th>Sub Category</th>
+                        <th>Country</th>
+                        <th>Revenue</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Data table akan muncuk disini -->
+                    </tbody>
+                </table>
             </div>
         </div>
         <!-- main content -->
