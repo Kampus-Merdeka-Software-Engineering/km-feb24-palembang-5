@@ -1,7 +1,7 @@
 // bar chart Order Quantity
 const getOrderQty = document.getElementById("orderQty");
             
-// bar chart Average Of Value
+// line chart Average Of Value
 const getAOV = document.getElementById("AOV");
 
 // bar chart Quantity Sold by Category 2016
@@ -13,11 +13,79 @@ const getQtySoldLc = document.getElementById("qtySoldLocation");
 // bar chart Sold By Age And Category
 const getSoldByAgeNCtg = document.getElementById("SoldByAgeNCtg");
 
+// filtering chart
+const btnPenjualan = document.getElementById("btn-penjualan");
+const btnAOV = document.getElementById("btn-aov")
+const btnSoldByCtg = document.getElementById("btn-qty-sold-ctg");
+const btnTotalOrderQty = document.getElementById("btn-total-order-qty-country");
+const btnSoldByAgeNCtg = document.getElementById("btn-sold-age-ctg");
+// refresh chart
+const btnRefresh = document.getElementById("btn-refresh");
+
+const chartPenjualan = document.getElementById("chart-penjualan-bulanan");
+const chartAverageOV = document.getElementById("chart-aov");
+const chartSoldByCtg = document.getElementById("chart-qty-sold-category");
+const chartTotalOrderQty = document.getElementById("chart-total-order-qty-country");
+const chartSoldByAgeNCtg = document.getElementById("chart-sold-by-age-and-category");
+
+// filtering chart Order Quantity
+btnPenjualan.addEventListener("click", () => {
+    chartPenjualan.style.display = "block";
+    chartAverageOV.style.display = "none";
+    chartSoldByCtg.style.display = "none";
+    chartTotalOrderQty.style.display = "none";
+    chartSoldByAgeNCtg.style.display = "none";
+});
+
+// filtering chart Average Of Value
+btnAOV.addEventListener("click", () => {
+    chartAverageOV.style.display = "block";
+    chartPenjualan.style.display = "none";
+    chartSoldByCtg.style.display = "none";
+    chartTotalOrderQty.style.display = "none";
+    chartSoldByAgeNCtg.style.display = "none";
+});
+
+// filtering chart Quantity Sold by Category 2016
+btnSoldByCtg.addEventListener("click", () => {
+    chartSoldByCtg.style.display = "block";
+    chartPenjualan.style.display = "none";
+    chartAverageOV.style.display = "none";
+    chartTotalOrderQty.style.display = "none";
+    chartSoldByAgeNCtg.style.display = "none";
+});
+
+// filtering chart Quantity Sold by Location
+btnTotalOrderQty.addEventListener("click", () => {
+    chartTotalOrderQty.style.display = "block";
+    chartPenjualan.style.display = "none";
+    chartAverageOV.style.display = "none";
+    chartSoldByCtg.style.display = "none";
+    chartSoldByAgeNCtg.style.display = "none";
+});
+
+// filtering chart Sold By Age And Category
+btnSoldByAgeNCtg.addEventListener("click", () => {
+    chartSoldByAgeNCtg.style.display = "block";
+    chartPenjualan.style.display = "none";
+    chartAverageOV.style.display = "none";
+    chartSoldByCtg.style.display = "none";
+    chartTotalOrderQty.style.display = "none";
+});
+
+// refresh chart
+btnRefresh.addEventListener("click", () => {
+    chartPenjualan.style.display = "block";
+    chartAverageOV.style.display = "block";
+    chartSoldByCtg.style.display = "block";
+    chartTotalOrderQty.style.display = "block";
+    chartSoldByAgeNCtg.style.display = "block";
+});
+
 // bar chart Order Quantity
 const getOrderQuantity = async () => {
     const response = await fetch("../data/dataset.json");
     const dataJson = await response.json();
-    // console.log(dataJson);
 
     // Objek untuk menyimpan total pesanan berdasarkan bulan
     const totalOrdersByMonth = {
@@ -62,24 +130,32 @@ const getOrderQuantity = async () => {
     });
 };
 
-// bar chart Average Of Value
+// line chart Average Of Value
 const getAverageOrderValue = async () => {
-    const response = await fetch("../data/dataset.json");
+    const response = await fetch("../data/dataAOV.json");
     const dataJson = await response.json();
-    // console.log(dataJson);
 
     new Chart(getAOV, {
-        type: "bar",
+        type: "line",
         data: {
-            labels: dataJson.data.map((bikes) => bikes.Customer_Gender),
+            labels: dataJson.data.map((bikes) => bikes.Month),
             datasets: [
                 {
                     label: 'Average Of Value',
-                    data: dataJson.data.map((bikes) => bikes.Order_Quantity),
+                    data: dataJson.data.map((bikes) => bikes.AoV),
+                    backgroundColor: 'rgba(54, 162, 235, 1)',
+                    borderColor: 'rgba(54, 162, 235, 1.5)',
                     borderWidth: 1,
                 },
             ],
         },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
     });
 };
 
@@ -141,7 +217,6 @@ const getQtySoldByCategory = async () => {
 const getQtySoldByLocation = async () => {
     const response = await fetch("../data/dataset.json");
     const dataJson = await response.json();
-    // console.log(dataJson);
 
     // Objek untuk menyimpan total pesanan berdasarkan negara
     const totalOrdersByCountry = {
@@ -276,10 +351,9 @@ const getSoldByAgeAndCtg = async () => {
     });
 };
 
-
 // table Total Penjualan
 document.addEventListener("DOMContentLoaded", function() {
-    const maxDataToShow = 12; // Ubah sesuai dengan jumlah data maksimum yang ingin Anda tampilkan
+    const maxDataToShow = 10; // Ubah sesuai dengan jumlah data maksimum yang ingin Anda tampilkan
     fetch("../data/dataset.json")
         .then(response => response.json())
         .then(data => {
@@ -299,8 +373,14 @@ document.addEventListener("DOMContentLoaded", function() {
     .catch(error => console.error("Error fetching data:", error));
 });
 
+// memanggil fungsi
 getOrderQuantity();
+chartPenjualan.style.display = "block";
 getAverageOrderValue();
+chartAverageOV.style.display = "block";
 getQtySoldByCategory();
+chartSoldByCtg.style.display = "block";
 getQtySoldByLocation();
+chartTotalOrderQty.style.display = "block";
 getSoldByAgeAndCtg();
+chartSoldByAgeNCtg.style.display = "block";
