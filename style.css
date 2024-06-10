@@ -8,7 +8,6 @@
 html,body{
     height: 100%;
     width: 100%;
-    /* background: #3498db; */
 }
 
 /* navbar */
@@ -326,7 +325,6 @@ nav ul li a:hover {
 .left.container {
     height: 50%;
     width: 80%;
-    /* text-align: center; */
     line-height: 22px;
 }
 
