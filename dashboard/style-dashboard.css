@@ -420,10 +420,13 @@
     background: none;
     text-align: left;
     cursor: pointer;
+    transition: all ease-in-out 0.4s;
 }
 
 .dropdown-content button:hover {
     background-color: #1a8cff;
+    transform: scale(1.05);
+    border-radius: 8px;
 }
 
 .dropdown:hover .dropdown-content {
